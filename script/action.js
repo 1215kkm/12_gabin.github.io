@@ -6,7 +6,7 @@ $(document).ready(function(){
     $('.img_box').each(function(){
         let imgLength = $(this).find('img').length;
         if(imgLength < 3){
-            $(this).siblings('.btn_box').find('.right2').hide();;
+            $(this).siblings('.btn_box').find('.right2').hide();
         }
         if(imgLength < 2){
             $(this).siblings('.btn_box').hide();
