@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김가빈_UX/UI 포트폴리오</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="script/jquery-3.7.0.min.js"></script>
+    <script src="script/action.js"></script>
+
+    <!-- AOS효과 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/f3c9d07c5d.js"></script>
+
+    <!-- 폰트 -->
+    <link href='https://fonts.googleapis.com/css?family=Baloo Bhai' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div id="cover" class="box">
+        <div class="design">UI / UX DESIGN</div>
+
+        <div class="textbox">
+            <strong>
+                <span>G</span>
+                <span>A</span>
+                <span>B</span>
+                <span>I</span>
+                <span>N</span>
+                <span>'S</span>    
+            </strong>
+            <p>
+                <span>PORTFOLIO</span>
+            </p>
+
+        </div>
+        <ul class="gnb">
+            <li><a href="web.html" target="_blank">Web</a></li>
+            <li><a href="application.html" target="_blank">Application</a></li>
+            <li><a href="banner.html" target="_blank">Banner</a></li>
+        </ul>
+    </div>
+
+    <div id="me_pr" class="box">
+        <ul class="gnb2">
+            <li><a href="web.html" target="_blank">Web</a></li>
+            <li><a href="application.html" target="_blank">Application</a></li>
+            <li><a href="banner.html" target="_blank">Banner</a></li>
+        </ul>
+
+
+        <div class="pr">가보자! 디자인하러!<br><span>김가빈</span>이 갑니다</div>
+
+        <div class="photo"><img src="images/me.png" alt=""></div>
+        
+        <div class="con_box">
+            <div class="con1">
+                <h3>"</h3>
+                <strong>
+                    <p>UI/UX 디자이너의 길을 걷기 위해<br>차곡차곡 쌓아 올린 <span>소중한 경험들</span>입니다.<br>이 경험을 바탕으로 최고의 결과물을<br>구현해 낼 수 있는 디자이너가 되겠습니다.</p>
+                </strong>
+            </div>
+
+            <div class="con2">
+                <strong>
+                    <p>1997. 08. 28<br>Email.  rladbfla8172@hanmail.net<br>Phone.  010 - 4184 - 5896</p>
+                </strong>
+            </div>
+
+            <div class="con3">
+                <h3>EDUCATION</h3>
+                <strong>
+                    <p>23. 10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;미금 그린컴퓨터 UI/UX 디자인&퍼블리셔 수료중<br>23. 03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;농업회사법인가온누리 근무<br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 홍보, 매장관리 (아임웹 관리 경험 有)</span><br>21. 02&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전주대학교 시각디자인학과 졸업</p>
+                </strong>
+            </div>
+
+            <div class="con4">
+                <h3>CAPABILITY</h3>
+                <ul>
+                    <li>
+                        <img src="images/pr_con4_p.png" alt="">
+                        <p>창의력</p>
+                    </li>
+                    <li>
+                        <img src="images/pr_con4_red.png" alt="">
+                        <p>긍정적</p>
+                    </li>
+                    <li>
+                        <img src="images/pr_con4_gr.png" alt="">
+                        <p>커뮤니케이션</p>
+                    </li>
+                    <li>
+                        <img src="images/pr_con4_ye.png" alt="">
+                        <p>디자인 자부심</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="con5">
+                <h3>SKILLS</h3>
+                <ul>
+                    <li><img src="images/pr_con5_ps.png" alt=""></li>
+                    <li><img src="images/pr_con5_ai.png" alt=""></li>
+                    <li><img src="images/pr_con5_xd.png" alt=""></li>
+                    <li><img src="images/pr_con5_figma.png" alt=""></li>
+                    <li><img src="images/pr_con5_ht.png" alt=""></li>
+                    <li><img src="images/pr_con5_css.png" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        let check = false;
+        let $cover = $('#cover')
+        let coverH = $cover.outerHeight();
+
+
+        $(window).scroll(function(){
+            fullPage();
+        })
+
+        
+        function fullPage(){
+            let scrT = $(window).scrollTop();
+            
+            if(scrT > 0 && scrT < coverH){
+                if(check == false){
+                    check = true;
+                    
+                    
+                    if(!$cover.hasClass('active')){
+
+                        $cover.addClass('active');
+
+                        $('html').stop(true).animate({
+                            scrollTop: coverH+1 //IE버그 반복 버그 처리를 위해 1을 추가합니다.
+                        },500,function(){
+                            check = false;
+                        });
+
+                    } else {
+
+                        $cover.removeClass('active');
+
+                        $('html').stop(true).animate({
+                            scrollTop: 0
+                        },300,function(){
+                            check = false;
+                        });
+
+                    }
+                }
+            }
+            if( scrT >= coverH){
+                // $cover.addClass('active');
+                $('#me_pr .pr').addClass('on')
+                $('#me_pr .photo').addClass('on')
+                $('.gnb2').addClass('on')
+            } else {
+                $('#me_pr .pr').removeClass('on')
+                $('#me_pr .photo').removeClass('on')
+                $('.gnb2').removeClass('on')
+            }
+        };
+
+        console.log($('#me_pr .pr').position().top)
+        console.log($('#me_pr .pr').position().left)
+        console.log($('#me_pr .photo').position().top)
+        console.log($('#me_pr .photo').position().left)
+
+
+
+
+    </script>
+
+    <!-- AOS효과 -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+
+</body>
+</html>
